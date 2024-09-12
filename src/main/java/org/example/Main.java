@@ -3,6 +3,7 @@ package org.example;
 import org.example.method.Density;
 import org.example.method.Matrix;
 import org.example.method.ProjectileMethod;
+import org.example.method.Solver;
 
 import java.util.ArrayList;
 
@@ -15,8 +16,9 @@ public class Main {
 
         System.out.println(projectileMethod.getProjectile());
 
-        projectileMethod.nextStep(1);
+        projectileMethod = Solver.numberOfIterations(1000,0,projectileMethod,1);
 
         System.out.println(projectileMethod.getProjectile());
+
     }
 }

@@ -18,12 +18,16 @@ public class Density {
     public static ArrayList<Double> calculateDragForce(Projectile projectile) {
         ArrayList<Double> dragForce = new ArrayList<>();
         ArrayList<Double> projectileVelocity = projectile.getVelocity();
+        double makeNegative = -1.0;
         double density = Density.getDensityFromAltitude(projectile.getDisplacement().get(1));
         double area = projectile.getCrossSectionalArea();
         double coefficientOfDrag = projectile.getDragCoefficient();
 
         for (double element : projectileVelocity) {
-            dragForce.add(-0.5 * density * element * element * coefficientOfDrag * area);
+            if(element < 0){
+                makeNegative = 1.0;
+            }
+            dragForce.add(makeNegative * 0.5 * density * element * element * coefficientOfDrag * area);
         }
 
         return dragForce;
