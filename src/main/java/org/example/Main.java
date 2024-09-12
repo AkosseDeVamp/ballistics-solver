@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.application.Projectile;
 import org.example.method.Density;
 import org.example.method.Matrix;
 import org.example.method.ProjectileMethod;
@@ -12,13 +13,21 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        ProjectileMethod projectileMethod = new ProjectileMethod(750.0,0,30,false);
+        ProjectileMethod projectileMethod = new ProjectileMethod(10.0,0,90,false);
 
         System.out.println(projectileMethod.getProjectile());
 
-        projectileMethod = Solver.numberOfIterations(1000,0,projectileMethod,1);
+        projectileMethod = Solver.numberOfIterations(10000,0,projectileMethod,0.1);
 
         System.out.println(projectileMethod.getProjectile());
+        System.out.println(projectileMethod.getTimePassed());
+        System.out.print("\n");
+        for(Projectile entry : projectileMethod.getProjectileStatesList()){
+            System.out.print(entry.getDisplacement());
+            System.out.print(entry.getVelocity());
+            System.out.print(entry.getAcceleration());
+            System.out.print("\n");
+        }
 
     }
 }

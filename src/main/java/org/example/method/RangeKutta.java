@@ -126,7 +126,7 @@ public class RangeKutta {
 
     private void combineKVals() throws Exception {
         kCombined = new Projectile();
-        double scalar = (timeStep / 6.0);
+        double scalar = (1.0 / 6.0);
 
         ArrayList<ArrayList<Double>> kValuesListDisplacement = new ArrayList<>();
         kValuesListDisplacement.add(vectorK1.getDisplacement());

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class ProjectileMethod {
     private Projectile projectile;
     private ArrayList<Projectile> projectileStatesList = new ArrayList<>();
+    private double timePassed = 0;
 
     public ProjectileMethod(double velocity, double heightAboveSeaLevel, double angleElevation, boolean isInRadians) {
         this.projectile = new Projectile();
@@ -44,6 +45,7 @@ public class ProjectileMethod {
         ArrayList<Double> acceleration = calculateAcceleration(this.projectile);
         this.projectile.setAcceleration(acceleration);
         this.projectileStatesList.add(this.projectile);
+        this.timePassed += timeStep;
 
 
     }
