@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        ProjectileMethod projectileMethod = new ProjectileMethod(10.0,0,90,false);
+        ProjectileMethod projectileMethod = new ProjectileMethod(750,0,55,false);
 
         System.out.println(projectileMethod.getProjectile());
 
@@ -22,12 +22,12 @@ public class Main {
         System.out.println(projectileMethod.getProjectile());
         System.out.println(projectileMethod.getTimePassed());
         System.out.print("\n");
-        for(Projectile entry : projectileMethod.getProjectileStatesList()){
-            System.out.print(entry.getDisplacement());
-            System.out.print(entry.getVelocity());
-            System.out.print(entry.getAcceleration());
-            System.out.print("\n");
-        }
+//        for(Projectile entry : projectileMethod.getProjectileStatesList()){
+//            System.out.print(entry.getDisplacement());
+//            System.out.print(entry.getVelocity());
+//            System.out.print(entry.getAcceleration());
+//            System.out.print("\n");
+//        }
 
     }
 }
